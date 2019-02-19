@@ -1,0 +1,5 @@
+mixin btn(text, isA)
+    if isA
+        a.btn(href='/event.html')&attributes(attributes)= text
+    else
+        button.btn(type='button')&attributes(attributes)= text

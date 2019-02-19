@@ -1,0 +1,77 @@
+.calendar {
+    background-color: $white;
+    display: flex;
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: $border-radius;
+    box-shadow: $utf-shadow;
+    margin-bottom: 1rem;
+
+    header {
+        section {
+            margin: .5rem 0;
+        }
+    }
+
+    tr {
+        width: 100%;
+        text-align: center;
+
+        td, th {
+            width: 1.875rem;
+            height: 1.875rem;
+            text-align: center;
+            justify-content: center;
+        }
+        td.calSelectable:hover, td.calSelectable.active, .calSelected {
+            background-color: #FFCC00;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .day-off {
+            font-weight: bold;
+        }
+    }
+
+    caption {
+        text-align: center;
+        caption-side: top;
+        margin: 0 -1.2rem;
+    }
+
+    table{
+        margin: 0 1.2rem;
+        border-spacing: 0px;
+        border-collapse:separate;
+    }
+
+    tbody td{
+        text-align: center;
+
+    }
+
+    .calDisable{
+        color:#ccc;
+        cursor: auto;
+    }
+    .larr{
+        cursor:pointer;
+        float:left;
+    }
+    .larr:before{
+        content:"◄";
+    }
+    .larr:hover{
+        color:white;
+    }
+    .rarr{
+        cursor:pointer;
+        float:right;
+    }
+    .rarr:before{
+        content:"►";
+    }
+    .rarr:hover{
+        color:#FFCC00;
+    }
+}

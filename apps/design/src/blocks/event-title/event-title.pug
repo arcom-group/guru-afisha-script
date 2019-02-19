@@ -1,0 +1,7 @@
+mixin event-title(name, where, btn)
+    .event-title()&attributes(attributes)
+        span
+            span= name
+            span.event-title__light &nbsp;#{where}
+        if btn
+            +btn('Купить билет').btn-primary

@@ -1,0 +1,13 @@
+.event-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: (24 / 16) + rem; // 24px / 16px = rem
+    font-weight: bold;
+    margin-bottom: (18.5 / 16) + rem;
+    &__light {
+        font-weight: normal;
+        color: $color-light-text;
+    }
+}

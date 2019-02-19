@@ -1,0 +1,36 @@
+.image {
+    border-radius: $border-radius;
+    overflow: hidden;
+    position: relative;
+    width: (200 / 16) + rem;
+    min-width: (200 / 16) + rem;
+    max-width: (200 / 16) + rem;
+    margin: 0;
+    padding: 0;
+    > img {
+        width: 100%;
+        height: 100%;
+    }
+    &__years-old {
+        font-size: (12 / 16) + rem;
+        font-weight: bold;
+
+        position: absolute;
+        top: (10 / 16) + rem;
+        right: (10 / 16) + rem;
+        z-index: 10;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        max-height: (25 / 16) + rem;
+        min-height: (25 / 16) + rem;
+            height: (25 / 16) + rem;
+
+        border-radius: (12.5 / 16) + rem;
+
+        background-color: $guru;
+        padding: 0 (10 / 16) + rem;
+    }
+}

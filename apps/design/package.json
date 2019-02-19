@@ -1,0 +1,33 @@
+{
+  "name": "24guru-utf",
+  "version": "0.0.1",
+  "main": "gulpfile.js",
+  "author": "Valentin <mepfunc@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "make": "yarn && node make.js l",
+    "start": "yarn && yarn gulp dev",
+    "build": "yarn && yarn gulp build",
+    "dev": "yarn start",
+    "create": "node cb.js"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.3"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "mkdirp": "0.5.1"
+  },
+  "engines": {
+    "node": ">=9.8"
+  }
+}

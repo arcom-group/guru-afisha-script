@@ -1,0 +1,65 @@
+.share {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #666666;
+    padding-top: (15 / 16) + rem;
+    &__title {
+        margin-bottom: 1rem;
+    }
+    &__buttons {
+        font-size: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &__button {
+        &_vk a, &_fb a, &_twitter a {
+            @include transition($btn-transition);
+            display: block;
+            width: 60px;
+            height: 26px;
+            border-radius: $border-radius;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:after {
+                content: '';
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                display: block;
+                width: (14 / 16) + rem;
+                height: (14 / 16) + rem;
+            }
+            &:hover {
+                background-color: $blue;
+            }
+        }
+        &_vk a {
+            background-color: $vk;
+            &:after {
+                background-image: url($vk-img);
+            }
+        }
+        &_fb a {
+            background-color: $facebook;
+            &:after {
+                background-image: url($facebook-img);
+            }
+        }
+        &_twitter a {
+            background-color: $twitter;
+            &:after {
+                background-image: url($twitter-img);
+            }
+        }
+    }
+}

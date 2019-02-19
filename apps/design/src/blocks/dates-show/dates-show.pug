@@ -1,0 +1,25 @@
+mixin dates-show()
+    section.dates-show()&attributes(attributes)
+        h4.dates-show__header Даты показа
+        .dates-show__body
+            .dates-show__item
+                span.dates-show__date 14 февраля
+                ul.dates-show__sessions
+                    li
+                        a(href='#') 12:50
+                    li.inactive
+                        a(href='#') 16:35
+                    li.in3d
+                        a(href='#') 20:00
+            .dates-show__item
+                span.dates-show__date 15 февраля
+                ul.dates-show__sessions
+                    li
+                        a(href='#') 12:50
+                    li
+                        a(href='#') 16:35
+                    li.in3d
+                        a(href='#') 20:00
+                    li.inactive
+                        a(href='#') 22:10
+            a.dates-show__more(href='#') Показать еще

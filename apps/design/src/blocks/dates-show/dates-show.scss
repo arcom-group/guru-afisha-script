@@ -1,0 +1,107 @@
+.dates-show {
+    &__header {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    &__body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    &__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding: (30 / 16) + rem 0;
+        border-bottom: 1px solid $utf-border-color;
+        background-color: $white;
+        &:first-child {
+            border-top: 1px solid $utf-border-color;
+        }
+    }
+    &__date {
+        min-width: (120 / 16) + rem;
+        font-size: (12 / 16) + rem;
+        font-weight: 600;
+    }
+    &__more {
+        @include transition($btn-transition);
+        color: #999999;
+        text-decoration: underline;
+        margin-top: (15 / 16) + rem;
+        &:hover {
+            color: $blue;
+        }
+    }
+    &__sessions {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0;
+        margin-left: -(5 / 16) + rem;
+        > li {
+            display: inline-block;
+            margin: 0 (5 / 16) + rem;
+            a {
+                transition: all .35s ease;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                min-height: (30 / 16) + rem;
+                max-height: (30 / 16) + rem;
+                    height: (30 / 16) + rem;
+                min-width: (60 / 16) + rem;
+                max-width: (60 / 16) + rem;
+                    width: (60 / 16) + rem;
+                padding: 0 (13 / 16) + rem;
+                font-size: (12 / 16) + rem;
+                font-weight: 600;
+                text-decoration: none;
+                color: $body-color;
+                background-image: url('/img/ticket.svg');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                &:hover {
+                    background-image: url('/img/ticket_h.svg');
+                }
+            }
+            &.inactive {
+                a {
+                    color: #CCCCCC;
+                    background-image: url('/img/ticket_i.svg');
+                    &:hover {
+                        background-image: url('/img/ticket_i.svg');
+                    }
+                }
+            }
+            &.in3d {
+                a {
+                    position: relative;
+                    &:before {
+                        content: '3d';
+                        font-size: (9 / 16) + rem;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        line-height: 1;
+                        text-align: center;
+                        width: 24px;
+                        height: 11px;
+                        color: $blue;
+                        border-radius: 50px;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

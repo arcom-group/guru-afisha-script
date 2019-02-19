@@ -1,0 +1,30 @@
+.cover {
+    width: 100%;
+    min-height: 14.0625rem;
+    border-radius: $border-radius;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    .count {
+        border-radius: $border-radius;
+        z-index: 5;
+        width: ( 52 / 16 ) + rem;
+        height: ( 27 / 16 ) + rem;
+        line-height: ( 27 / 16 ) + rem;
+        position: absolute;
+        text-align: center;
+        font-size: $font-size-base;
+        font-weight: 600;
+        top: -0.25rem;
+        left: -0.25rem;
+        display: block;
+        background-color: $guru;
+    }
+    img {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%
+    }
+}

@@ -1,0 +1,7 @@
+.about-text {
+    line-height: (22 / 16) + rem;
+    font-size: (13 / 16) + rem;
+    &__light {
+        color: $color-light-text;
+    }
+}

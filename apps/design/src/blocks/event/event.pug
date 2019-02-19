@@ -1,0 +1,29 @@
+mixin event(index)
+    .event()&attributes(attributes)
+        .row
+            .col-3: +cover(999 - Math.round(Math.random() * 1000), '/img/' + index + '.png')
+            .col-7
+                .header Богемская рапсодия
+                .guru-buttons.d-flex
+                    +btn('Беларусь').btn-outline-primary.active
+                    +btn('Аврора').btn-outline-primary
+                    +btn('Октябрь').btn-outline-primary
+                    +btn('Дом кино').btn-outline-primary
+                    +btn('Ракета').btn-outline-primary
+
+                .sub-header 24 декабря
+                .guru-buttons.dates.d-flex.flex-wrap
+                    -let i = 0;
+                    -let id = '';
+                    .btn-group-toggle(data-toggle='buttons')
+                        while i < 7
+                            -id = 'option' + i;
+                                label.btn.btn-light
+                                    input(type='radio', name='options', id=id, autocomplete='off')
+                                    = '24 дек '+ (10 + i++) + ':00'
+
+            .col-2.d-flex.flex-column.justify-content-start.guru-buttons-left
+                .left-line
+                +btn('Код виджета').btn-outline-secondary.mt-1.mb-2
+                +btn('Комиссия').btn-outline-secondary.mb-2
+                +btn('Отчет').btn-outline-secondary.mb-2

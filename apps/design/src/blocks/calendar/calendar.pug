@@ -1,0 +1,98 @@
+mixin calendar()
+    .calendar()&attributes(attributes).d-flex.flex-wrap.flex-column.flex-fill#js-rap-calendar
+    //.calendar()&attributes(attributes).d-flex.flex-wrap.flex-column.flex-fill
+        header.d-flex.flex-column.flex-fill
+            nav.d-flex.justify-content-between.align-items-center.flex-fill
+                button.btn.btn-sm(type='button') <
+                span.title Декабрь
+                button.btn.btn-sm(type='button') >
+
+            section
+                -const week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
+                .week.flex-fill
+                    each day, index in week
+                        if index === 6 || index === 5
+                            span.day-off= day
+                        else
+                            span= day
+
+        main.d-flex.flex-column.flex-fill
+            -let classVal = '';
+            -const week1 = [ 27, 28, 29, 30, 31, 1,  2  ];
+            -const week2 = [ 3,  4,  5,  6,  7,  8,  9  ];
+            -const week3 = [ 10, 11, 12, 13, 14, 15, 16 ];
+            -const week4 = [ 17, 18, 19, 20, 21, 22, 23 ];
+            -const week5 = [ 24, 25, 26, 27, 28, 29, 30 ];
+            -const week6 = [ 31, 1,  2,  3,  4,  5,  6  ];
+
+            //- -const month = [week1, week2, week3, week4, week5, week6];
+            //- each wk in month
+
+            .week.flex-fill
+                    each day, index in week1
+                        -classVal = '';
+
+                        if day > week1[week1.length-1]
+                            -classVal += 'disable ';
+                        if index === 6 || index === 5
+                            -classVal += 'day-off';
+
+                        span(class=classVal)= day
+
+            .week.flex-fill
+                    each day, index in week2
+                        -classVal = '';
+
+                        if day > week2[week2.length-1]
+                            -classVal += 'disable ';
+                        if index === 6 || index === 5
+                            -classVal += 'day-off';
+
+                        span(class=classVal)= day
+            .week.flex-fill
+                    each day, index in week3
+                        -classVal = '';
+
+                        if day > week3[week3.length-1]
+                            -classVal += 'disable ';
+                        if index === 6 || index === 5
+                            -classVal += 'day-off';
+
+                        span(class=classVal)= day
+
+            .week.flex-fill
+                    each day, index in week4
+                        -classVal = '';
+
+                        if day > week4[week4.length-1]
+                            -classVal += 'disable ';
+                        if index === 6 || index === 5
+                            -classVal += 'day-off ';
+
+                        if day === new Date().getDate()
+                            -classVal += 'active';
+
+                        span(class=classVal)= day
+
+            .week.flex-fill
+                    each day, index in week5
+                        -classVal = '';
+
+                        if day > week5[week5.length-1]
+                            -classVal += 'disable ';
+                        if index === 6 || index === 5
+                            -classVal += 'day-off';
+
+                        span(class=classVal)= day
+
+            .week.flex-fill
+                    each day, index in week6
+                        -classVal = '';
+
+                        if day < week6[0]
+                            -classVal += 'disable ';
+                        if index === 6 || index === 5
+                            -classVal += 'day-off';
+
+                        span(class=classVal)= day

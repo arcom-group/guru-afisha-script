@@ -1,0 +1,14 @@
+.location {
+    &__header {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    &__body {
+        margin-left: -(5 / 16) + rem;
+        > * {
+            height: (40 / 16) + rem;
+            margin: 0 (5 / 16) + rem ((5 / 16) * 2) + rem;
+        }
+    }
+}

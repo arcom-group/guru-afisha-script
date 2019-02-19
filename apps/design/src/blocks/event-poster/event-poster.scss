@@ -1,0 +1,30 @@
+.event-poster {
+    padding: 1.25rem;
+    // padding: 0.5rem;
+    width: 200px;
+    // height: 264px;
+    // background: $white;
+    overflow: hidden;
+    border-radius: $border-radius;
+    // margin-bottom: 0.65rem;
+    margin: 0.25rem;
+    // box-shadow: $utf-shadow;
+    display: inline-flex;
+    flex-direction: column;
+    .price {
+        margin: 0;
+        padding-bottom: .8em;
+        opacity: .5;
+    }
+    .header {
+        font-size: 0.8rem;
+        font-weight: bold;
+        // margin-bottom: 0.875rem;
+        padding: 0.4rem 0;
+    }
+    .sub-header {
+        font-size: 0.875rem;
+        font-weight: bold;
+        margin: 0.875rem 0;
+    }
+}

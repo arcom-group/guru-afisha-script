@@ -1,0 +1,116 @@
+/* global styles */
+html, body {
+    background-color: $utf-body;
+}
+
+.font-size-base {
+    font-size: $font-size-base;
+}
+
+.filter {
+    width: 100%;
+    border-radius: $border-radius; // from bootstrap @see variables.scss
+    overflow: hidden;
+    background: $white;
+    list-style: none;
+    margin: 0;
+    padding: 1.875rem 1.875rem 1rem;
+    box-shadow: $utf-shadow;
+    li {
+        margin-bottom: 1.5625rem;
+    }
+}
+
+.search {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: $border-radius; // from bootstrap @see ./../variables.scss
+    background: $white;
+    border: 1px solid #ccc;
+}
+
+.left-line {
+    position: absolute;
+    content: '';
+    width: 1px;
+    background-color: #e5e5e5;
+    top: -1.5625rem;
+    bottom: -1.5625rem;
+    left: -0.3125rem;
+}
+
+.guru-buttons {
+    .btn {
+        margin: 0 .625rem .625rem 0;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &-left {
+        .btn {
+            margin-bottom: .625rem;
+        }
+    }
+}
+
+.navbar-guru {
+    padding: 1.25rem;
+    margin: 0 0 1rem 0;
+    border-radius: $border-radius; // from bootstrap @see ./../variables.scss
+    background-color: $white;
+    box-shadow: $utf-shadow;
+}
+
+.events-block {
+    // justify-content: space-between;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+
+    padding-bottom: 1.25rem;
+}
+
+.header-text {
+    padding: 1.3rem 0;
+    font-weight: 400;
+}
+
+.m-top-25 {
+    margin-top: (25 /16) + rem;
+}
+.m-bot-25 {
+    margin-bottom: (25 /16) + rem;
+}
+
+.session {
+    display: flex;
+    flex-direction: row;
+    padding: (20 / 16) + rem;
+    background-color: $white;
+    &__left {
+        min-width: (200 / 16) + rem;
+        max-width: (200 / 16) + rem;
+            width: (200 / 16) + rem;
+    }
+    &__right {
+        margin-left: (18 / 16) + rem;
+        line-height: (24 / 16) + rem;
+    }
+}
+
+.description {
+    max-width: 800px;
+    min-width: 800px;
+    
+    img {
+        max-width: 700px;
+        height: auto !important;
+    }
+    .image-container {
+        text-align: center;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+}

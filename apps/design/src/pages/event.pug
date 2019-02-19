@@ -1,0 +1,69 @@
+extends ../templates/main.pug
+block content
+    .container-fluid
+        .row
+            .col-12
+                .h1.header-text Афиша мероприятий и билеты
+        .session
+            section.session__left
+                +image()
+                +share()
+            section.session__right
+                +event-title('Рассвет', '(Россия, 2018)', true)
+                +about-text('Жанр:', 'Ужасы, фантастика,  детектив,  триллер')
+                +about-text('Дата показа:', '31 января - 15 февраля')
+                +about-text('Длительность:', '145 мин.')
+                +about-text('Режиссер:', '31 января - 15 февраля')
+                +about-text('В главных ролях:', 'Вигго Мортенсен, Махершала Али, Линда Карделлини')
+                +about-text('Возрастное ограничение:', '16+')
+                +description
+
+                +location.m-top-25
+
+                +dates-show.m-top-25.m-bot-25
+        //- .row
+            .col-12
+                .session
+                    .session__row
+                        figure.session__cover
+                            img(src='https://d.kvitki.by/int/eventsimg/d4a4e4695d6854cb8188a21fe9ae3c79.jpg')
+                        .session__about
+                            h2.session__title Спартак / Spartacus
+                            time.session__time 15.02.2019 19:00
+                            span.session__location Большой театр Беларуси / The Bolshoi Theatre of Belarus, Минск, пл.Парижской Коммуны, 1
+                            span.session__price 5.00 - 21.00 *
+                            +btn('Купить').btn-outline-primary.session__btn
+                    .session__col
+                        h3.session__subtitle Описание мероприятия
+                        p.session__about-session
+                            | Либретто – Николай Волков в редакции Валентина Елизарьева и Евгения Лысика
+                            br
+                            | Хореография и постановка – народный артист СССР и Беларуси, лауреат Государственной премии Республики Беларусь Валентин Елизарьев
+                            br
+                            | Композитор – народный артист СССР, лауреат Государственных премий СССР Арам Хачатурян
+                            br
+                            | Дирижер-постановщик – народный артист СССР, лауреат Государственной премии Республики Беларусь Ярослав Вощак
+                            br
+                            | Художник-постановщик – народный художник Украины, лауреат Государственной премии Украины Евгений Лысик
+                            br
+                            | Дирижеры – заслуженный деятель искусств Республики Беларусь Николай Колядко, Андрей Иванов, обладатель медали Франциска Скорины Андрей Галанов
+                            br
+                            | Продолжительность – 2 часа 30 минут с двумя антрактами
+                            br
+                            | Премьера – 13 июля 1980 года
+                        p.session__more Более подробная информация на сайте&nbsp;
+                            a(href='#') http://bolshoibelarus.by
+                    .session__col
+                        h3.session__subtitle Купить или забронировать билеты
+                        iframe.session__frame(width='100%' height='700' frameborder='0' src='https://saleframe.24guru.by?lang=ru&amp;sid=415')
+
+                        h4.session__other-title Дополнительная информация
+                        p.session__additional-info ОБЗОР СЦЕНЫ ОГРАНИЧЕН: БАЛКОН ряд 2 места 1, 2, 55, 56 ряд 3 места 2-4, 57-59 ряд 4 места 4, 62 ряд 5 места 3-5, 57-59 ряд 6 места 2-5, 51-54 БЕЛЬЭТАЖ (правая и левая сторона): ряд 1 места 4, 5 ряд 2 места 3-6 ряд 3 места 5, 6 ряд 4 места 1-4 ряд 5 места 1-4 БЕНУАР (правая и левая сторона): ряд 5места 1, 2 ЛОЖИ А и Б ряд 4 место 11
+                        h4.session__other-title Место проведения
+                        p.session__about-location
+                            span Название: Большой театр Беларуси / The Bolshoi Theatre of Belarus
+                            span Город: Минск
+                            span Адрес: пл.Парижской Коммуны, 1
+                    .session__col
+                        .session__map
+                            <iframe src="//www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9400.756430611413!2d27.5616798!3d53.9106154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x68dcff0ab63167c0!2z0JDQutCw0LTQtdC80LjRh9C10YHQutC40Lkg0JHQvtC70YzRiNC-0Lkg0KLQtdCw0YLRgCDQvtC_0LXRgNGLINC4INCx0LDQu9C10YLQsA!5e0!3m2!1sru!2sby!4v1478" width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen=""></iframe>

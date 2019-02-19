@@ -1,0 +1,88 @@
+extends ../templates/main.pug
+block content
+    .container-fluid
+        .row
+            .col-12
+                .h1.header-text Афиша мероприятий и билеты
+        .row(style="flex-wrap: nowrap;")
+            .col-3(style="max-width: 25em;")
+                .row
+                    .container
+                        .row.flex-fill
+                            .col.flex-fill
+                                .collapse#navbarToggleExternalContent.flex-fill
+                                    .bg-white.p-4.flex-fill.mb-5
+                                        h5.text-black.h4.flex-fill Collapsed content
+                                        span.text-muted.flex-fill Toggleable via the navbar brand.
+                    .container
+                        .row
+                            .col-12
+                                +calendar
+
+                                ul.filter
+                                    li.custom-control.custom-checkbox
+                                        input.custom-control-input#customCheck1(type="checkbox")
+                                        label.custom-control-label(for="customCheck1") Фильмы
+                                    li.custom-control.custom-checkbox
+                                        input.custom-control-input#customCheck2(type="checkbox")
+                                        label.custom-control-label(for="customCheck2") Концерты
+                                    li.custom-control.custom-checkbox
+                                        input.custom-control-input#customCheck3(type="checkbox")
+                                        label.custom-control-label(for="customCheck3") Спектакли
+                                    li.custom-control.custom-checkbox
+                                        input.custom-control-input#customCheck4(type="checkbox")
+                                        label.custom-control-label(for="customCheck4") Шоу
+                                    li.custom-control.custom-checkbox
+                                        input.custom-control-input#customCheck4(type="checkbox")
+                                        label.custom-control-label(for="customCheck4") Цирк
+                                    li.custom-control.custom-checkbox
+                                        input.custom-control-input#customCheck4(type="checkbox")
+                                        label.custom-control-label(for="customCheck4") Представление
+                                    li.custom-control.custom-checkbox
+                                        input.custom-control-input#customCheck4(type="checkbox")
+                                        label.custom-control-label(for="customCheck4") Прочее
+
+            .container-fluid
+                .row
+                    .col-12
+                        nav.navbar.navbar-light.navbar-guru
+                            .row.flex-fill
+                                .col-9
+                                    .input-group
+                                        input.form-control(type="text" aria-describedby="button-addon" placeholder="Поиск по заведению, мероприятию" aria-label="Поиск по заведению, мероприятию")
+                                        .input-group-append
+                                            button#button-addon.btn.btn-outline-secondary(type="button") search
+
+                                .col-3
+                                    .row
+                                        .col-12.d-flex
+                                            .btn-group.flex-fill
+                                                button.btn.btn-outline-transparent.dropdown-toggle.guru.flex-fill(type='button', data-toggle='dropdown', aria-haspopup='true' aria-expanded='false') Все города
+                                                .dropdown-menu
+                                                    a.dropdown-item(href='/') Брест
+                                                    a.dropdown-item(href='/') Витебск
+                                                    a.dropdown-item(href='/') И т.д.
+
+                    .col-12
+                        .row
+                            .col-12.events-block
+                                +event-poster('1', 'Громкая связь')
+                                +event-poster('2', 'Семь ужинов')
+                                +event-poster('3', 'Отрыв')
+                                +event-poster('1', 'Тетрадь дружбы Нацумэ')
+                                +event-poster('2', 'Алита: Боевой ангел')
+                                +event-poster('3', 'Ван Гог. На пороге вечности')
+                                +event-poster('1', 'Человек-паук: Через вселенные')
+                                +event-poster('2', 'Богемская рапсодия')
+                                +event-poster('3', 'Девочка')
+                                +event-poster('1', 'Тим Талер, или Проданный смех')
+                                +event-poster('2', 'Вествуд: Панк, икона, активист (SUB) / Fashion Weekend')
+                                +event-poster('3', 'Проект Cinemascope: Всё о Еве')
+                                +event-poster('1', 'Вернуть Бена')
+                                +event-poster('2', 'Спасти Ленинград')
+                                +event-poster('3', 'Клаустрофобы')
+                                +event-poster('1', 'Alita: Battle Angel (RU SUB)')
+                                +event-poster('2', 'Зеленая книга')
+                                +event-poster('3', 'Кислота')
+
+

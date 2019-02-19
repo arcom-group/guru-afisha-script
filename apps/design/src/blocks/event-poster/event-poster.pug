@@ -1,0 +1,7 @@
+mixin event-poster(index, text)
+    .event-poster()&attributes(attributes)
+        +cover(999 - Math.round(Math.random() * 1000), '/img/' + index + '.png')
+        .header= text
+        - let cost = 999 - Math.round(Math.random() * 1000);
+        p.price от #{cost} р.
+        +btn('Купить билет', true).btn-outline-primary
