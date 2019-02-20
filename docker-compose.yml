@@ -10,6 +10,6 @@ services:
     links:
       - php
   php:
-    image: 7.2.15-fpm-alpine3.8
+    image: php:7.2.15-fpm-alpine3.8
     volumes:
       - './:/code'
