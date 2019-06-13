@@ -60,7 +60,7 @@ foreach(is_array($event->sessions) ? $event->sessions : [] as $session) {
           <span><?= $event->name ?></span>
           <!-- <span class="event-title__light">&nbsp;(Россия, 2018)</span> -->
         </span>
-        <? if ($event->nearSession && count($event->objects) < 2) { ?>
+        <? if (is_array($event->objects) && !empty($event->objects) && $event->nearSession && count($event->objects) < 2) { ?>
           <a class="btn btn-primary arcom__btn" href="<?= frameUrl($event->nearSession->id); ?>">Купить билет</a>
         <? } ?>
       </div><span class="about-text">
