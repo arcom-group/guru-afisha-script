@@ -23,8 +23,8 @@ $selectedTypes = explode(',', getStore('guru_selected_types'));
 
 ?>
 
-<div class="row" style="flex-wrap: nowrap;">
-  <div class="col-3" style="max-width: 25em;">
+<div class="row">
+  <div class="calendar-column">
     <div class="row">
       <div class="container">
         <div class="row flex-fill">
@@ -58,7 +58,7 @@ $selectedTypes = explode(',', getStore('guru_selected_types'));
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="main-content-view">
     <div class="row">
       <div class="col-12">
         <nav class="navbar navbar-light navbar-guru">
