@@ -2,6 +2,7 @@
  * Инициализируем переменные
  */
 let currentPage = 1;
+let lastPage = 1;
 let currentObjectId = 0;
 let currentDate = 0;
 
@@ -30,6 +31,7 @@ $(document).ready(function(){
             date.setSeconds(0);
 
             currentDate = parseInt(date.getTime()/1000);
+            currentPage = 1;
             loadData();
         }
     });
@@ -41,6 +43,7 @@ $(document).ready(function(){
         // Устанавливаем текст выбранного города
         loadCity();
         // Перезагружаем данные
+        currentPage = 1;
         loadData();
     });
 
@@ -75,6 +78,7 @@ $(document).ready(function(){
         });
 
         setCookie('guru_selected_types', types.join(','));
+        currentPage = 1;
         loadData();
     });
 
@@ -109,12 +113,21 @@ $(document).ready(function(){
         loadSessions();
     });
 
+    /**
+     * Метод загрузки данных при смене страницы
+     */
+    $('.js-load-next-page').on('click', function(e) {
+        e.preventDefault();
+
+        currentPage += 1;
+        loadData(true);
+    });
 });
 
 /**
  * Метод загрузки данных при событии
  */
-function loadData() {
+function loadData(isSave) {
     $.ajax({
         url: $config.server + $config.prefix + "/sellers/performance/distibution",
         data: {
@@ -122,14 +135,27 @@ function loadData() {
             cityId: getCookie('guru_selected_city_id'),
             typeIds: getCookie('guru_selected_types'),
             date: currentDate,
+            page: currentPage,
             'per-page': $config.perPage
         },
         success: function(data) {
             // Чистим блок с карточками мероприятий
-            $('.events-block').html('');
+            if (!isSave) {
+                $('.events-block').html('');
+            }
 
             if (data && data.data && data.data.length) {
                 $('.js-no-result').addClass('d-none');
+
+                if (data.pagination) {
+                    lastPage = data.pagination.pageCount;
+
+                    if (lastPage > currentPage) {
+                        $('.js-load-next-page').show();
+                    } else {
+                        $('.js-load-next-page').hide();
+                    }
+                }
 
                 data.data.forEach(function (event) {
                     let el = $('#js-event-poster-template .event-poster').clone();

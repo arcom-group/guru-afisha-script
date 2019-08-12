@@ -10,9 +10,12 @@ $events = getApi('/sellers/performance/distibution', [
   'typeIds' => getStore('guru_selected_types'),
   'str' => $searchStr,
   'per-page' => $config['perPage'],
+  'page' => $page,
 ]);
+
 $cities = getApi('/cities');
 $types = getApi('/performance/types');
+$pagination = isset($events->pagination) ? $events->pagination : [];
 
 // STORE
 $selectedTypesStore = explode(',', getStore('guru_selected_types'));
@@ -108,6 +111,11 @@ $selectedTypes = explode(',', getStore('guru_selected_types'));
                 </div>
               <? } ?>
           </div>
+          <? if(!empty($pagination) && $pagination->pageCount > 1 && $pagination->currentPage < $pagination->pageCount) { ?>
+            <div class="col-12 text-center">
+              <a class="btn btn-outline-primary js-load-next-page" data-current="<?= $pagination->currentPage ?>" href="?page=<?= $pagination->currentPage+1 ?>&searchStr=<?= $str ?>">Еще...</a>
+            </div>
+          <? } ?>
           <div id="js-event-poster-template" style="display: none;">
             <div class="event-poster">
               <a href="?event=">

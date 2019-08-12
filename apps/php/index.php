@@ -17,6 +17,7 @@ require_once($PRIVATE_DIR.'/libs/functions.php');
 $config = require('config.php');
 $eventId = (int)$_GET['event'];
 $searchStr = $_GET['str'];
+$page = (int)$_GET['page'] ? : 1;
 
 ?>
 
