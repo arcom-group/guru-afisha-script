@@ -63,19 +63,19 @@
                 font-weight: 600;
                 text-decoration: none;
                 color: $body-color;
-                background-image: url('/img/ticket.svg');
+                background-image: url('/guru-include/public/img/ticket.svg');
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 &:hover {
-                    background-image: url('/img/ticket_h.svg');
+                    background-image: url('/guru-include/public/img/ticket_h.svg');
                 }
             }
             &.inactive {
                 a {
                     color: #CCCCCC;
-                    background-image: url('/img/ticket_i.svg');
+                    background-image: url('/guru-include/public/img/ticket_i.svg');
                     &:hover {
-                        background-image: url('/img/ticket_i.svg');
+                        background-image: url('/guru-include/public/img/ticket_i.svg');
                     }
                 }
             }

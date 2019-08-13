@@ -129,6 +129,29 @@ html, body {
 }
 
 @media (max-width: 810px) {
+    .session {
+        flex-direction: column;
+    }
+    .session__left {
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .session__right {
+        margin: 1rem 0 0 0;
+    }
+    .description {
+        min-width: auto;
+        max-width: none;
+    }
+    .dates-show__item {
+        padding: 1rem 0;
+    }
     .navbar-guru > .row.flex-fill > .col-9 {
         max-width: 50%;
     }
