@@ -53,6 +53,9 @@ $selectedTypes = explode(',', getStore('guru_selected_types'));
                 </li>
               <? } ?>
             </ul>
+            <div class="js-filters-reset btn btn-outline-primary" style="width: 100%; margin-top: 20px">
+              <span>Сбросить фильтры</span>
+            </div>
           </div>
         </div>
       </div>
