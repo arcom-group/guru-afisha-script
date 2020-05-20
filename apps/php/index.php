@@ -18,6 +18,7 @@ $config = require('config.php');
 $eventId = (int)$_GET['event'];
 $searchStr = $_GET['str'];
 $page = (int)$_GET['page'] ? : 1;
+$view = $_GET['view'] ? : '';
 
 ?>
 
@@ -47,6 +48,7 @@ $page = (int)$_GET['page'] ? : 1;
     <link rel="stylesheet" href="guru-include/public/css/style.css?v=1">
     <script>
         let $config = <?= json_encode([
+          'afishaUrl' => $config['afishaUrl'], 
           'server' => $config['server'], 
           'prefix' => $config['prefix'], 
           'distibutionId' => $config['distibutionId'], 
@@ -54,6 +56,7 @@ $page = (int)$_GET['page'] ? : 1;
           'perPage' => $config['perPage'],
           ]); ?>;
         let $eventId = <?= $eventId; ?>;
+        let $view = "<?= $view; ?>";
     </script>
   </head>
   <body>
@@ -62,24 +65,31 @@ $page = (int)$_GET['page'] ? : 1;
         <div class="col-12">
           <div class="h1 header-text">
               <img src="guru-include/public/img/ticket.svg" style="opacity: 0.5;">
-              <a href="/" style="font-size: 1.7rem;">
+              <a class="<?= !$view ? 'active' : '' ?>" href="/" style="font-size: 1.7rem;">
                 Афиша мероприятий и билеты
+              </a>
+              <a class="<?= $view == 'video' ? 'active' : '' ?>" href="/?view=video" style="font-size: 1.7rem;">
+                Онлайн ТВ
               </a>
           </div>
         </div>
       </div>
 
       <?php 
-        if ($eventId) {
-            /**
-             * Include event page
-             */
-            include_once($PRIVATE_DIR.'/pages/event.php');
-        } else {
-            /**
-             * Include home page
-             */
-            include_once($PRIVATE_DIR.'/pages/index.php');
+        if (!$view) {
+          if ($eventId) {
+              /**
+               * Include event page
+               */
+              include_once($PRIVATE_DIR.'/pages/event.php');
+          } else {
+              /**
+               * Include home page
+               */
+              include_once($PRIVATE_DIR.'/pages/index.php');
+          }
+        } elseif($view == 'video') {
+          include_once($PRIVATE_DIR.'/pages/videos.php');
         }
       ?>
 

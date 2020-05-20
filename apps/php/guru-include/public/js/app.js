@@ -128,16 +128,32 @@ $(document).ready(function(){
  * Метод загрузки данных при событии
  */
 function loadData(isSave) {
-    $.ajax({
-        url: $config.server + $config.prefix + "/sellers/performance/distibution",
-        data: {
+    let url = "/sellers/performance/distibution";
+    let params = {
+        lang: $config.language,
+        cityId: getCookie('guru_selected_city_id'),
+        typeIds: getCookie('guru_selected_types'),
+        date: currentDate,
+        page: currentPage,
+        'per-page': $config.perPage
+    };
+
+    if ($view == 'video') {
+        url = "/sellers/video";
+
+        params = {
             lang: $config.language,
-            cityId: getCookie('guru_selected_city_id'),
-            typeIds: getCookie('guru_selected_types'),
-            date: currentDate,
             page: currentPage,
+            performanceId: $config.video_performance_id,
+            objectId: $config.video_object_id,
+            premium: $config.video_premium,
             'per-page': $config.perPage
-        },
+        };
+    }
+
+    $.ajax({
+        url: $config.server + $config.prefix + url,
+        data: params,
         success: function(data) {
             // Чистим блок с карточками мероприятий
             if (!isSave) {
@@ -160,16 +176,30 @@ function loadData(isSave) {
                 data.data.forEach(function (event) {
                     let el = $('#js-event-poster-template .event-poster').clone();
 
-                    el.find('.header').text(event.name);
-                    el.find('img').attr('src', $config.server + event.image.thumbnail.url);
-                    el.find('[href]').attr('href', '?event=' + event.id);
+                    if ($view == 'video') {
+                        el.find('.header').text(event.title);
+                        el.find('img').attr('src', event.performance.image['240x340']);
+                        el.find('[href]').attr('href', $config.afishaUrl + '/' + $config.language + '/minsk/videos/' + event.id);
 
-                    if (event.minPrice) {
-                        // Цены с сервера всегда приходят целым числом
-                        el.find('.price span').text(event.minPrice/100);
+                        if (event.price) {
+                            // Цены с сервера всегда приходят целым числом
+                            el.find('.price span').text(event.price/100);
+                        } else {
+                            el.find('.price').text('бесплатно');
+                        }
                     } else {
-                        el.find('.price').remove();
+                        el.find('.header').text(event.name);
+                        el.find('img').attr('src', $config.server + event.image.thumbnail.url);
+                        el.find('[href]').attr('href', '?event=' + event.id);
+
+                        if (event.minPrice) {
+                            // Цены с сервера всегда приходят целым числом
+                            el.find('.price span').text(event.minPrice/100);
+                        } else {
+                            el.find('.price').remove();
+                        }
                     }
+                    
 
                     $('.events-block').append($(el));
                 });

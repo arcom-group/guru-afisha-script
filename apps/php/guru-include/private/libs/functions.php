@@ -15,6 +15,28 @@ function url($uri) {
     return $config['server'] . $uri;
 }
 
+ /**
+  * Generate url
+  *
+  * @param [type] $uri
+  * @return string
+  */
+function afishaUrl($uri) {
+    $config = require('config.php');
+    return $config['afishaUrl'] . $uri;
+}
+
+ /**
+  * Generate url
+  *
+  * @param [type] $uri
+  * @return string
+  */
+function videoUrl($uri) {
+    $config = require('config.php');
+    return afishaUrl('/'. $config['language'] .'/minsk/videos/' . $uri);
+}
+
 /**
  * Build 24guru image url
  *

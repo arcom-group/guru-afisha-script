@@ -8738,3 +8738,6 @@ html, body {
   margin-bottom: 10px;
   padding: 5px;
 }
+a.active {
+  text-decoration: underline !important;
+}
