@@ -101,7 +101,7 @@ html, body {
 .description {
     max-width: 800px;
     min-width: 800px;
-    
+
     img {
         max-width: 700px;
         height: auto !important;
@@ -112,5 +112,73 @@ html, body {
         border-radius: 5px;
         margin-bottom: 10px;
         padding: 5px;
+    }
+}
+
+.calendar-column {
+    max-width: 25em;
+    min-width: 25em;
+    margin-left: 7.5px;
+}
+
+.main-content-view {
+    max-width: calc(100% - 25em - 1.25rem - 15px);
+    margin-left: 1.25rem;
+    margin-right: 7.5px;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 810px) {
+    .session {
+        flex-direction: column;
+    }
+    .session__left {
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .session__right {
+        margin: 1rem 0 0 0;
+    }
+    .description {
+        min-width: auto;
+        max-width: none;
+    }
+    .dates-show__item {
+        padding: 1rem 0;
+    }
+    .navbar-guru > .row.flex-fill > .col-9 {
+        max-width: 50%;
+    }
+    .calendar-column {
+        max-width: calc(100% - 15px);
+        min-width: calc(100% - 15px);
+        margin-left: 7.5px;
+        margin-bottom: 1rem;
+    }
+    .main-content-view {
+        margin-left: 7.5px;
+        max-width: calc(100% - 15px);
+        min-width: calc(100% - 15px);
+    }
+    .events-block {
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .event-poster {
+        padding: 0;
+        margin: 0.75rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .event-poster {
+        width: calc(50% - 1.5rem);
     }
 }

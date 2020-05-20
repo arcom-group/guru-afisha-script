@@ -122,7 +122,30 @@ $(document).ready(function(){
         currentPage += 1;
         loadData(true);
     });
+
+    // Reset all filters
+    $('.js-filters-reset').on('click', function(event) {
+        resetFilters();
+    });
 });
+
+/**
+ * Reset all filters
+ */
+function resetFilters() {
+    $('.js-types input').prop("checked", false);
+    $('.js-types .js-all-checkbox input').prop("checked", true);
+    $('.calSelectable.calSelected').removeClass('calSelected');
+    $('.navbar.navbar-light.navbar-guru form input.form-control').val('');
+    $('.btn.btn-outline-transparent.dropdown-toggle.guru.flex-fill').text('Все')
+    setCookie('guru_selected_city_id', '0');
+    setCookie('guru_selected_city_name', 'Все');
+    deleteCookie('guru_selected_types');
+    types = [];
+    currentDate = 0;
+    currentPage = 1;
+    loadData();
+}
 
 /**
  * Метод загрузки данных при событии
@@ -245,7 +268,7 @@ function loadSessions() {
 
                 data.data.forEach(function (event) {
                     // Для начала нам необходимо получить строку даты и строку времени
-                    let date = new Date();    
+                    let date = new Date();
                     date.setTime(event.timeSpending+'000');
 
                     let mm = date.getMonth() + 1; // getMonth() is zero-based
@@ -258,7 +281,7 @@ function loadSessions() {
                     if (!dates[dateStr]) {
                         dates[dateStr] = [];
                     }
-                    
+
                     // Строка времени
                     event.time = [(h>9?'':'0')+h, (m>9?'':'0')+m].join(':');
 
@@ -287,7 +310,7 @@ function loadSessions() {
                             timeEl.addClass('in3d');
                         }
 
-                        // Если сеанс в продаже, удаляем клас неактивной кнопки, и ставим кнопке 
+                        // Если сеанс в продаже, удаляем клас неактивной кнопки, и ставим кнопке
                         if (session.isSell) {
                             timeEl.removeClass('inactive');
                             timeEl.find('a')
