@@ -52,6 +52,8 @@ $view = $_GET['view'] ? : '';
           'server' => $config['server'], 
           'prefix' => $config['prefix'], 
           'distibutionId' => $config['distibutionId'], 
+          'objectIds' => $config['objectIds'],
+          'organizatorIds' => $config['organizatorIds'], 
           'language' => $config['language'], 
           'perPage' => $config['perPage'],
           ]); ?>;

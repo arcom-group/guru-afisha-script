@@ -60,6 +60,8 @@ function apiUrl($uri, $params = []) {
     $config = require('config.php');
     $params['lang'] = $config['lang'];
     $params['distributorCompanyId'] = $config['distibutionId'];
+    $params['objectIds'] = $config['objectIds'];
+    $params['organizatorIds'] = $config['organizatorIds'];
     return $config['server'] . $config['prefix'] . $uri . '?' . http_build_query($params);
 }
 

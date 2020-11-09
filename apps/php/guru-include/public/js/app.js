@@ -156,6 +156,8 @@ function loadData(isSave) {
         lang: $config.language,
         cityId: getCookie('guru_selected_city_id'),
         typeIds: getCookie('guru_selected_types'),
+        objectIds: $config.objectIds,
+        organizatorIds: $config.organizatorIds,
         date: currentDate,
         page: currentPage,
         'per-page': $config.perPage
@@ -255,6 +257,8 @@ function loadSessions() {
         data: {
             lang: $config.language,
             cityId: getCookie('guru_selected_city_id'),
+            objectIds: $config.objectIds,
+            organizatorIds: $config.organizatorIds,
             only: 'active',
             'per-page': 30,
             objectIds: currentObjectId,
