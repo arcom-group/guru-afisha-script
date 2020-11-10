@@ -24,6 +24,7 @@ return [
      */
     'perPage' => 24,
     'language' => 'ru',
+    'loadAonlyActive' => false,
 
     /**
      * Конфигурация фильтров видеоконтента

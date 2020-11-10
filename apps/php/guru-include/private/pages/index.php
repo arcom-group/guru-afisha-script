@@ -4,14 +4,20 @@
  * Author: rs@arcom.group
  */
 
-// REQUESTS
-$events = getApi('/sellers/performance/distibution', [
+$params = [
   'cityId' => getStore('guru_selected_city_id'),
   'typeIds' => getStore('guru_selected_types'),
   'str' => $searchStr,
   'per-page' => $config['perPage'],
   'page' => $page,
-]);
+];
+
+if ($config['loadAonlyActive']) {
+  $params['fromData'] = time();
+}
+
+// REQUESTS
+$events = getApi('/sellers/performance/distibution', $params);
 
 $cities = getApi('/cities');
 $types = getApi('/performance/types');

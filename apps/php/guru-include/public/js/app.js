@@ -163,6 +163,10 @@ function loadData(isSave) {
         'per-page': $config.perPage
     };
 
+    if ($config.loadAonlyActive) {
+        params[fromData] = parseInt(Date.now()/1000);
+    }
+
     if ($view == 'video') {
         url = "/sellers/video";
 

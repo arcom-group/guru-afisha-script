@@ -54,6 +54,7 @@ $view = $_GET['view'] ? : '';
           'distibutionId' => $config['distibutionId'], 
           'objectIds' => $config['objectIds'],
           'organizatorIds' => $config['organizatorIds'], 
+          'loadAonlyActive' => $config['loadAonlyActive'], 
           'language' => $config['language'], 
           'perPage' => $config['perPage'],
           ]); ?>;
